@@ -1,0 +1,256 @@
+{
+    "id_sucursal":24,
+    "ultima_actualizacion":"8/11/2022",
+    "data":{
+        "categorias":[
+            {
+                "id_categoria": 1,
+                "nombre_categoria":"Desayunos",
+                "descripcion_categoria":"Huevos, regionales, entre otros",
+                "imagen_categoria":"https://menugrg.com.mx:7443/menudigital/categorias/Chilaquiles_Pollo.1604202038.jpg",
+                "imagen_fondo_categoria":"https://menugrg.com.mx:7443/menudigital/categorias/Chilaquiles_Pollo.1604202038.jpg",
+                "active": true,
+                "daypart":"1,2",
+                "restriccion_sucursal":"10,16,20",
+                "restriccion_horario_inicio":"08:30:00",
+                "restriccion_horario_fin":"12:30:00",
+                "restriccion_region":"22",
+                "disponibilidad_inicio":"2022-12-06 08:30:00", 
+                "disponibilidad_fin":"2023-12-06 08:30:00",
+                "subcategorias":
+                [
+                    {
+                        "id_subcategoria":1,
+                        "nombre_subcategoria":"Huevos y omelettes",
+                        "descripcion_subcategoria":"Variedad de buevito",
+                        "restriccion_sucursal":"10,16,20",
+                        "restriccion_horario_inicio":"08:30:00",
+                        "restriccion_horario_fin":"12:30:00",
+                        "restriccion_region":"22",
+                        "disponibilidad_inicio":"2022-12-06 08:30:00",
+                        "disponibilidad_fin":"2023-12-06 08:30:00",
+                        "articulos":
+                        [
+                            {
+                                "id_articulo":1,
+                                "nombre_articulo":"Huevos al gusto",
+                                "cantidad":"300",
+                                "unidad_medida":"grs",
+                                "descripción":"Huevos preparados al gusto",
+                                "extracto_logo":"Huevos frescos orgánicos",
+                                "id_experiencia":0,
+                                "nombre_experiencia":"",
+                                "descripcion_experiencia":"",
+                                "imagen_articulo":"https://menugrg.com.mx:7443/menudigital/Articulos/Huevos_al_gusto.1594321072.jpg",
+                                "prioridad_menu":1,
+                                "precio":155,
+                                "restriccion_sucursal":"10,16,20",
+                                "restriccion_horario_inicio":"08:30:00",
+                                "restriccion_horario_fin":"12:30:00",
+                                "restriccion_region":"22",
+                                "disponibilidad_inicio":"2022-12-06 08:30:00",
+                                "disponibilidad_fin":"2023-12-06 08:30:00",
+                                "modificadores":[
+                                    {
+                                        "id_modificador":1,
+                                        "nombre_modificador": "2 huevos revueltos o fritos, a elegir",
+                                        "precio":0.00,
+                                        "prioridad":1,
+                                        "modificador_dependiente":false,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":1,
+                                                "nombre_opcion_modificador": "Fritos",
+                                                "modificador_trigger":2,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":2,
+                                                "nombre_opcion_modificador": "Revueltos",
+                                                "modificador_trigger":2,
+                                                "precio_extra": 0.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":2,
+                                        "nombre_modificador":"Elige una especialidad de huevo",
+                                        "precio":0.00,
+                                        "prioridad":2,
+                                        "modificador_dependiente":true,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":3,
+                                                "nombre_opcion_modificador": "A la mexicana",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":4,
+                                                "nombre_opcion_modificador": "Con tocino",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 5.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":3,
+                                        "nombre_modificador":"Entrada",
+                                        "precio":0.00,
+                                        "prioridad":3,
+                                        "modificador_dependiente":false,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":5,
+                                                "nombre_opcion_modificador": "Jugo",
+                                                "modificador_trigger":4,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":6,
+                                                "nombre_opcion_modificador": "Fruta",
+                                                "modificador_trigger":5,
+                                                "precio_extra": 5.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":4,
+                                        "nombre_modificador":"Elige el sabor de tu jugo",
+                                        "precio":0.00,
+                                        "prioridad":4,
+                                        "modificador_dependiente":true,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":7,
+                                                "nombre_opcion_modificador": "Toronja",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":8,
+                                                "nombre_opcion_modificador": "Naranja",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 5.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":5,
+                                        "nombre_modificador":"Elige tu fruta",
+                                        "precio":0.00,
+                                        "prioridad":5,
+                                        "modificador_dependiente":true,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":9,
+                                                "nombre_opcion_modificador": "Manzana",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":10,
+                                                "nombre_opcion_modificador": "Naranja",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 5.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":6,
+                                        "nombre_modificador":"Bebida Caliente",
+                                        "precio":0.00,
+                                        "prioridad":6,
+                                        "modificador_dependiente":false,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":11,
+                                                "nombre_opcion_modificador": "Café",
+                                                "modificador_trigger":7,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":12,
+                                                "nombre_opcion_modificador": "Té",
+                                                "modificador_trigger":8,
+                                                "precio_extra": 5.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":7,
+                                        "nombre_modificador":"Tipo de café",
+                                        "precio":0.00,
+                                        "prioridad":6,
+                                        "modificador_dependiente":true,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":13,
+                                                "nombre_opcion_modificador": "Regular",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":14,
+                                                "nombre_opcion_modificador": "Descafeinado",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id_modificador":8,
+                                        "nombre_modificador":"Tipo de té",
+                                        "precio":0.00,
+                                        "prioridad":7,
+                                        "modificador_dependiente":true,
+                                        "opciones":
+                                        [
+                                            {
+                                                "id_opcion_modificador":15,
+                                                "nombre_opcion_modificador": "Limón",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            },
+                                            {
+                                                "id_opcion_modificador":16,
+                                                "nombre_opcion_modificador": "Matcha",
+                                                "modificador_trigger":0,
+                                                "precio_extra": 0.00
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "opciones_personalizacion":
+                                [
+                                    {
+                                        "nombre_personalizacion":"Agrega hot cake",
+                                        "precio_personalizacion":30.00,
+                                        "cantidad_personalizacion":1,
+                                        "unidad_personalizacion":"pza"
+                                    },
+                                    {
+                                        "nombre_personalizacion":"Crece tu jugo",
+                                        "precio_personalizacion":15.00,
+                                        "cantidad_personalizacion":355,
+                                        "unidad_personalizacion":"ml"
+                                    }
+                                ]
+
+                            }
+                        ]
+                    }
+                ]
+
+
+            }
+        ]
+    }
+}
