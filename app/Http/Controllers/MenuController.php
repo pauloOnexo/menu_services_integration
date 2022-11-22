@@ -7,21 +7,56 @@ use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
-    public function menuFactory(){
+    public function menuFactory($id_marca){
         $response = array();
         $categorias = DB::table('new_category')
-                        ->where('id_marca','=','1')
+                        ->where('id_marca','=',$id_marca)
                         ->get();
-        $subcategorias = DB::table('new_subcategorie')->get();
-        $articulos = DB::table('new_article')->get();
-        $queryCategories = DB::select(DB::raw("select distinct (case when a.id_categoria=47 then 0 else a.id_categoria end) orden, a.id_categoria id_categoria, nombre_categoria,a.id_marca,a.imagen_categoria
-        from new_category a join Categoria_Marca b on b.id_categoria = a.id_categoria
-                                            where 1=1 and activo = 1  and b.id_marca=1 and a.nombre_categoria not like '%en casa%' order by orden"));
+
+        foreach ($categorias as $categoria) {
+            $querySub = $this->getSubcategories($categoria->id_categoria);
+            $categoria->subcategorias = $querySub;
+        }
+
         $response['categorias'] = $categorias;
-        // $response['subcategorias'] = $subcategorias;
-        // $response['articulos'] = $articulos;
-        // $response['query'] = $query;
 
         return $response;
+    }
+
+    public function getSubcategories ($id_categoria){
+        $subcategorias = DB::table('new_subcategorie')
+                        ->select("*")
+                        ->whereRaw("FIND_IN_SET('".$id_categoria."',categorias)")
+                        ->get();
+
+                        foreach ($subcategorias as $subcategoria) {
+                            $queryArt = $this->getArticles($subcategoria->id_subcategoria);
+                            $subcategoria->articulos = $queryArt;
+                        }
+
+                        return $subcategorias;
+    }
+
+    public function getArticles ($id_subcategoria){
+        $articles = DB::table('new_article')
+                        ->select("*")
+                        ->whereRaw("FIND_IN_SET('".$id_subcategoria."',subcategorias)")
+                        ->get();
+
+                        foreach ($articles as $article) {
+                            $queryExt = $this->getExtras($article->modificadores);
+                            $article->opciones_personalizacion = $queryExt;
+                        }
+
+                        return $articles;
+    }
+
+    public function getExtras($id_extra){
+        $extras = DB::table('extra')
+                    ->select("*")
+                    ->whereRaw("FIND_IN_SET(id,'".$id_extra."')")
+                    ->get();
+
+                    return $extras;
     }
 }

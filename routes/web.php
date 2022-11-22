@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/menu', [MenuController::class, 'menuFactory']);
+Route::get('/menu/{id_marca}', [MenuController::class, 'menuFactory']);
