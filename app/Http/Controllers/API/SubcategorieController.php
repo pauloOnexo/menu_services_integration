@@ -15,7 +15,8 @@ class SubcategorieController extends Controller
      */
     public function index()
     {
-        $subcategories = DB::table('new_subcategorie')->get();
+        $subcategories = DB::table('new_subcategorie')
+                        ->get();
 
         return $subcategories;
     }
