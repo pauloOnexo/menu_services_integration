@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MenuController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class MenuApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = DB::table('new_category')
-        ->where('id_marca',1)
-        ->get();
-
-        return $category;
+        //
     }
 
     /**
@@ -30,7 +26,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $marca = $request->id_marca;
+        $sucursal = $request->id_sucursal;
+        $response = (new MenuController)->menuFactory($marca, $sucursal);
+        return $response;
     }
 
     /**
