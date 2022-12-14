@@ -21,8 +21,8 @@ class MenuController extends Controller
         // dd($id_marca);
 
         if ($id_marca != 1 && $id_marca != 2 && $id_marca != 3 ) {
-            $response['status'] = http_response_code();
-            $response['status_message'] = "La marca indicada no corresponde a nuestros registros";
+            $response['status'] = 'BAD REQUEST';
+            $response['status_msg'] = "La marca indicada no corresponde a nuestros registros";
             return $response;
         }
 
@@ -32,8 +32,8 @@ class MenuController extends Controller
         ->get();
 
         if (sizeof($sucursal) < 1) {
-            $response['status'] = http_response_code();
-            $response['status_message'] = "La sucursal indicada, no corresponde a la marca solicitada";
+            $response['status'] = 'BAD REQUEST';
+            $response['status_msg'] = "La sucursal indicada, no corresponde a la marca solicitada";
             return $response;
         }
 
@@ -46,8 +46,8 @@ class MenuController extends Controller
                         ->get();
 
         if (sizeof($categorias) < 1) {
-                $response['status'] = http_response_code();
-                $response['status_message'] = "No tenemos categorias de la marca que solicitas";
+                $response['status'] = 'BAD REQUEST';
+                $response['status_msg'] = "No tenemos categorias de la marca que solicitas";
                 return $response;
             }
 
@@ -94,8 +94,8 @@ class MenuController extends Controller
 
 
         if (sizeof($categoriasFechaDisponibilidad) < 1) {
-            $response['status'] = http_response_code();
-            $response['status_message'] = "No tenemos categorias de la marca que solicitas";
+            $response['status'] = 'BAD REQUEST';
+            $response['status_msg'] = "No tenemos categorias de la marca que solicitas";
             return $response;
         }
 
@@ -107,7 +107,8 @@ class MenuController extends Controller
             $categoria->subcategorias = $querySub;
         }
 
-        $response['status'] = http_response_code(200);
+        $response['status'] = 'OK';
+        $response['status_msg'] = "Solicitud correcta";
         $response['categorias'] = $categoriasFechaDisponibilidad;
         $response['sucursal'] = $sucursal[0];
 

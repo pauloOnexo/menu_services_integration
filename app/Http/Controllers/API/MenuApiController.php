@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AUTH\LoginController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MenuController;
 use Illuminate\Http\Request;
@@ -26,11 +27,22 @@ class MenuApiController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $marca = $request->id_marca;
-        $sucursal = $request->id_sucursal;
-        $response = (new MenuController)->menuFactory($marca, $sucursal);
-        return $response;
+        $token = $request->bearerToken();
+
+        $checkUser = (new LoginController)->buscar_token_client($token);
+
+        if ($checkUser) {
+            $marca = $request->id_marca;
+            $sucursal = $request->id_sucursal;
+            $response = (new MenuController)->menuFactory($marca, $sucursal);
+            return $response;
+        }else{
+            $response = [];
+            $response['status'] = 'BAD REQUEST';
+            $response['status_msg'] = 'Token invalido';
+            return json_encode($response);
+        }
+
     }
 
     /**

@@ -4,6 +4,7 @@ use App\Http\Controllers\API\ArticleController;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\MenuApiController;
 use App\Http\Controllers\API\SubcategorieController;
+use App\Http\Controllers\AUTH\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,6 @@ Route::resource('articles', ArticleController::class);
 Route::resource('subcategories', SubcategorieController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('menu', MenuApiController::class);
+
+Route::post('checkUser',[LoginController::class, 'validar_datos_cliente']);
+Route::post('checkToken',[LoginController::class, 'checkToken']);
