@@ -34,7 +34,7 @@ services:
         container_name: test-db
         restart: unless-stopped
         ports:
-            - ${SERVER_PORT_DB:-3307}:3307
+            - ${SERVER_PORT_DB:-3306}:3306
         volumes:
             - dbdata:/var/lib/mysql
         environment:
@@ -42,7 +42,7 @@ services:
             - MYSQL_USER=${DB_USERNAME:-menudigital}
             - MYSQL_PASSWORD=${DB_PASSWORD:-admin1234}
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-admin1234}
-            - MYSQL_TCP_PORT= 3307
+            - MYSQL_TCP_PORT= 3306
         networks:
             - test-network
 
