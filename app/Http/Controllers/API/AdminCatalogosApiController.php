@@ -49,6 +49,7 @@ class AdminCatalogosApiController extends Controller
             } catch (Exception $e) {
                 $response['status'] = 'BAD REQUEST';
                 $response['status_msg'] = 'Hay un error con la data enviada, verificar información';
+                $response['error_code'] = $e->getCode();
                 $response['error_description'] = $e->getMessage();
                 return json_encode($response);
             }
