@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AdminCatalogosApiController;
 use App\Http\Controllers\API\ArticleController;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\MenuApiController;
@@ -27,6 +28,7 @@ Route::resource('articles', ArticleController::class);
 Route::resource('subcategories', SubcategorieController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('menu', MenuApiController::class);
+Route::resource('addMenu',AdminCatalogosApiController::class);
 
 Route::post('checkUser',[LoginController::class, 'validar_datos_cliente']);
 Route::post('checkToken',[LoginController::class, 'checkToken']);
